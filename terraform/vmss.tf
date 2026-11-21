@@ -17,7 +17,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
     public_key = var.admin_ssh_public_key
   }
 
-  custom_data = base64encode(file("${path.module}/cloud-init.yaml")) # revisar con la rama de cloud-init
+  custom_data = base64encode(file("${path.module}/cloud-init.yaml"))
 
   identity {
     type = "SystemAssigned" # Para que se pueda realizar S3 y S4

@@ -10,6 +10,9 @@ resource "azurerm_subnet" "app" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["10.10.1.0/24"]
+
+  default_outbound_access_enabled = false
+
   service_endpoint {
     service = "Microsoft.KeyVault"
   }
@@ -29,8 +32,8 @@ resource "azurerm_network_security_group" "app" {
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_port_range          = "80" # Navegación Web HTTP
-    destination_port_range     = "*"
+    source_port_range          = "*" 
+    destination_port_range     = "80" # Navegación Web HTTP
     source_address_prefix      = "Internet"
     destination_address_prefix = "*"
   }

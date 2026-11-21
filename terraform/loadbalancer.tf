@@ -43,4 +43,5 @@ resource "azurerm_lb_rule" "http" {
   frontend_ip_configuration_name = "public-ip-address"
   backend_address_pool_ids       = [azurerm_lb_backend_address_pool.app.id]
   probe_id                       = azurerm_lb_probe.health.id
+  disable_outbound_snat          = true
 }
