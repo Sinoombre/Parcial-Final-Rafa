@@ -1,0 +1,45 @@
+
+name: CaribeShop - Terraform DevSecOps
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  terraform-security:
+    name: Validacion y seguridad Terraform
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.17.1"
+
+      - name: Verificar formato
+        run: terraform fmt -check -recursive terraform
+
+      - name: Inicializar sin backend
+        run: terraform -chdir=terraform init -backend=false -input=false
+
+      - name: Validar configuracion Terraform
+        run: terraform -chdir=terraform validate -no-color
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Checkov
+        run: python -m pip install checkov==3.3.29
+
+      - name: Analizar seguridad con Checkov
+        run: checkov -d terraform --framework terraform
