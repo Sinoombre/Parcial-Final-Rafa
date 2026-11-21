@@ -7,10 +7,10 @@
 *.tfplan
 crash.log
 
-# Configuración local del backend
+# Backend local
 backend-config.hcl
 
-# Variables de entorno
+# Archivos de entorno
 .env
 .env.*
 !.env.example
