@@ -1,4 +1,4 @@
-resource "azurerm_virtual_network" "vnet" {
+resource "azurerm_virtual_network" "main" {
   name                = "vnet-${var.suffix}"
   address_space       = ["10.10.0.0/16"]
   location            = var.location
@@ -10,7 +10,7 @@ resource "azurerm_subnet" "app" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.10.1.0/24"]
-  service_endpoints    = ["Microsoft.KeyVault", "Microsoft.Storage"] // si usamos azure v5.0.0 o más nueva es service_enpoint (cambiar depende de la version que utilicemos)
+  service_endpoints    = ["Microsoft.KeyVault", "Microsoft.Storage"] // si se utiliza azurerm >=5.0.0 es service_enpoint { service = "Microsoft.KeyVault"}
 }
 
 resource "azurerm_network_security_group" "app" {
