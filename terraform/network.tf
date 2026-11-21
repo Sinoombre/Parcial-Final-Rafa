@@ -8,9 +8,14 @@ resource "azurerm_virtual_network" "main" {
 resource "azurerm_subnet" "app" {
   name                 = "snet-app"
   resource_group_name  = var.resource_group_name
-  virtual_network_name = azurerm_virtual_network.vnet.name
+  virtual_network_name = azurerm_virtual_network.main.name
   address_prefixes     = ["10.10.1.0/24"]
-  service_endpoints    = ["Microsoft.KeyVault", "Microsoft.Storage"] // si se utiliza azurerm >=5.0.0 es service_enpoint { service = "Microsoft.KeyVault"}
+  service_endpoint {
+    service = "Microsoft.KeyVault"
+  }
+  service_endpoint {
+    service = "Microsoft.Storage"
+  }
 }
 
 resource "azurerm_network_security_group" "app" {

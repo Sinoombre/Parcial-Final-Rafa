@@ -22,7 +22,7 @@ jobs:
       - name: Configurar Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.17.1"
+          terraform_version: "~> 1.13"
 
       - name: Verificar formato
         run: terraform fmt -check -recursive terraform
