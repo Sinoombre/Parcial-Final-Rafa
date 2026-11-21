@@ -1,0 +1,16 @@
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+*.tfplan
+crash.log
+
+# Configuración local del backend
+backend-config.hcl
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
