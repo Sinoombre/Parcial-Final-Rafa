@@ -12,9 +12,10 @@ terraform {
 
 provider "azurerm" {
   features {}
+
+  resource_provider_registrations = "none"
 }
 
-# Grupo de recursos principal de CaribeShop
 resource "azurerm_resource_group" "main" {
   name     = var.resource_group_name
   location = var.location
