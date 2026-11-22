@@ -32,7 +32,7 @@ resource "azurerm_network_security_group" "app" {
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_port_range          = "*" 
+    source_port_range          = "*"
     destination_port_range     = "80" # Navegación Web HTTP
     source_address_prefix      = "Internet"
     destination_address_prefix = "*"

@@ -3,8 +3,8 @@ resource "azurerm_public_ip" "ip_lb" {
   location            = var.location
   resource_group_name = var.resource_group_name
   allocation_method   = "Static"
-  sku                 = "Standard"      # IP pública Standard
-  zones               = ["1", "2", "3"] # zonal-redundante
+  sku                 = "Standard" # IP pública Standard
+  zones               = var.zones  # zonal-redundante
 }
 
 resource "azurerm_lb" "main" {

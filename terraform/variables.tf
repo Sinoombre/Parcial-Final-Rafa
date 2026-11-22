@@ -19,7 +19,7 @@ variable "suffix" {
 variable "vm_sku" {
   description = "SKU for the virtual machines"
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_F1als_v7"
 }
 
 variable "min_instances" {
@@ -31,10 +31,16 @@ variable "min_instances" {
 variable "max_instances" {
   description = "Maximum number of VM instances in the scale set"
   type        = number
-  default     = 5
+  default     = 2
 }
 
 variable "admin_ssh_public_key" {
   description = "Public SSH key for the admin user"
   type        = string
+}
+
+variable "zones" {
+  description = "Zones that are available for the SKU"
+  type        = list(string)
+  default     = ["1", "3"]
 }

@@ -5,6 +5,7 @@
 *.tfvars
 *.tfvars.json
 *.tfplan
+*tfplan
 crash.log
 
 # Backend local

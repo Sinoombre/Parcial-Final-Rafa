@@ -4,7 +4,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
   location            = var.location
   sku                 = var.vm_sku
   instances           = var.min_instances
-  zones               = ["1", "2", "3"]
+  zones               = var.zones
   zone_balance        = true
   health_probe_id     = azurerm_lb_probe.health.id
   upgrade_mode        = "Rolling" # Actualización de instancias de VMSS por lotes, no todas a la vez, obligatorio para health_probe_id
@@ -31,9 +31,11 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
   }
 
   os_disk {
-    storage_account_type = "Standard_LRS"
+    storage_account_type = "StandardSSD_LRS"
     caching              = "ReadWrite"
   }
+
+  encryption_at_host_enabled = true
 
   network_interface {
     name    = "nic"
