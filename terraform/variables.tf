@@ -31,7 +31,7 @@ variable "min_instances" {
 variable "max_instances" {
   description = "Maximum number of VM instances in the scale set"
   type        = number
-  default     = 2
+  default     = 6
 }
 
 variable "admin_ssh_public_key" {
