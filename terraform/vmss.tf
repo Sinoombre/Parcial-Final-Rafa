@@ -1,3 +1,4 @@
+#checkov:skip=CKV_AZURE_160:Puerto 80 necesario para redirección a HTTPS
 resource "azurerm_linux_virtual_machine_scale_set" "app" {
   name                = "vmss-${var.suffix}"
   resource_group_name = var.resource_group_name
@@ -18,6 +19,8 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
   }
 
   custom_data = base64encode(file("${path.module}/cloud-init.yaml"))
+
+  extension_operations_enabled = true
 
   identity {
     type = "SystemAssigned" # Para que se pueda realizar S3 y S4
