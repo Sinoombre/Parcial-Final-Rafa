@@ -27,3 +27,8 @@ output "subnet_app_id" {
   description = "ID de la subnet de la aplicación web"
   value       = azurerm_subnet.app.id
 }
+
+output "log_analytics_workspace_name" {
+  description = "Nombre del workspace donde se consulta la auditoría de Key Vault"
+  value       = azurerm_log_analytics_workspace.main.name
+}

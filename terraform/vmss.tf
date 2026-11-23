@@ -17,7 +17,11 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
     public_key = var.admin_ssh_public_key
   }
 
-  custom_data = base64encode(file("${path.module}/cloud-init.yaml"))
+  custom_data = base64encode(templatefile("${path.module}/cloud-init.yaml", {
+    app_b64               = filebase64("${path.module}/../app/app.py")
+    key_vault_uri         = azurerm_key_vault.app.vault_uri
+    key_vault_secret_name = azurerm_key_vault_secret.demo.name
+  }))
 
   identity {
     type = "SystemAssigned" # Para que se pueda realizar S3 y S4

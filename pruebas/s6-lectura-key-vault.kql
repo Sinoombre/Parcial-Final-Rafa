@@ -1,0 +1,24 @@
+// Ejecutar en Logs del workspace indicado por log_analytics_workspace_name.
+// Sustituir el nombre del vault y el valor del output vmss_principal_id.
+let vaultName = "<key_vault_name>";
+let vmssPrincipalId = "<vmss_principal_id>";
+let secretName = "caribeshop-demo";
+AzureDiagnostics
+| where TimeGenerated >= ago(24h)
+| where ResourceProvider =~ "MICROSOFT.KEYVAULT" and Resource =~ vaultName
+| where Category == "AuditEvent" and OperationName == "SecretGet"
+| extend Extra = column_ifexists("AdditionalFields", dynamic({}))
+| extend PrincipalId = coalesce(
+    tostring(column_ifexists("identity_claim_oid_g", "")),
+    tostring(column_ifexists("identity_claim_oid_s", "")),
+    tostring(column_ifexists("identity_claim_http_schemas_microsoft_com_identity_claims_objectidentifier_g", "")),
+    tostring(column_ifexists("identity_claim_http_schemas_microsoft_com_identity_claims_objectidentifier_s", "")),
+    tostring(Extra.identity_claim_oid),
+    tostring(Extra.identity_claim_http_schemas_microsoft_com_identity_claims_objectidentifier)
+)
+| extend HttpStatus = toint(coalesce(tostring(column_ifexists("httpStatusCode_d", "")), tostring(Extra.httpStatusCode))),
+    RequestUri = coalesce(tostring(column_ifexists("requestUri_s", "")), tostring(Extra.requestUri))
+| extend Secret = extract(@"/secrets/([^/?]+)", 1, RequestUri)
+| where PrincipalId =~ vmssPrincipalId and HttpStatus == 200 and Secret =~ secretName
+| project TimeGenerated, Vault = Resource, OperationName, HttpStatus, PrincipalId, Secret, CorrelationId
+| order by TimeGenerated desc
