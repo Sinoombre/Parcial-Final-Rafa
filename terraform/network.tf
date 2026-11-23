@@ -21,7 +21,7 @@ resource "azurerm_subnet" "app" {
   }
 }
 
-#checkov:skip=CKV_AZURE_160:Puerto 80 necesario para redirección a HTTPS
+# checkov:skip=CKV_AZURE_160: "Ensure that HTTP (port 80) access is restricted from the internet"
 resource "azurerm_network_security_group" "app" {
   name                = "nsg-app-${var.suffix}"
   location            = var.location
