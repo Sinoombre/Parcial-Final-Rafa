@@ -21,6 +21,21 @@ write_files:
           from pathlib import Path
           from urllib.parse import urlsplit
 
+          def get_zone():
+              try:
+                  request = urllib.request.Request(
+                      "http://169.254.169.254/metadata/instance/compute/zone"
+                      "?api-version=2021-02-01&format=text",
+                      headers={"Metadata": "true"},
+                  )
+                  opener = urllib.request.build_opener(
+                      urllib.request.ProxyHandler({})
+                  )
+                  with opener.open(request, timeout=2) as response:
+                      return response.read().decode("utf-8").strip() or "unknown"
+              except Exception:
+                  return "unknown"
+
           FAILURE_FLAG = Path('/var/lib/caribeshop/unhealthy')
           HOSTNAME = socket.gethostname()
           ZONE = get_zone()
