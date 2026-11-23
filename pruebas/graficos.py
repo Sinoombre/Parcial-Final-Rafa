@@ -53,10 +53,16 @@ def cargar_locust(ruta):
     # Devuelve la tabla limpia y un diccionario con peticiones y fallos totales
     return df[["tiempo", "usuarios", "rps", "fallos_s", "p95"]], resumen
 
+def _leer_texto(ruta):
+    """Lee texto detectando UTF-16 (PowerShell 5.1) o UTF-8 con/sin BOM."""
+    datos = Path(ruta).read_bytes()
+    if datos.startswith((b"\xff\xfe", b"\xfe\xff")):
+        return datos.decode("utf-16")
+    return datos.decode("utf-8-sig")
 
 def cargar_instancias(ruta):
     """Lee el JSON de `az monitor metrics list` (ObservedCapacity)."""
-    datos = json.loads(Path(ruta).read_text(encoding="utf-8"))
+    datos = json.loads(_leer_texto(ruta))
     puntos = datos["value"][0]["timeseries"][0]["data"]
 
     filas = [
