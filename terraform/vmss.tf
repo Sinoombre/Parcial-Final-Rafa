@@ -1,4 +1,3 @@
-#checkov:skip=CKV_AZURE_160:Puerto 80 necesario para redirección a HTTPS
 resource "azurerm_linux_virtual_machine_scale_set" "app" {
   name                = "vmss-${var.suffix}"
   resource_group_name = var.resource_group_name
