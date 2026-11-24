@@ -1,0 +1,4 @@
+utc,evento,instancia,hostname,detalle
+2026-11-24T04:01:32.225Z,FALLA_LOGICA_ORDEN,12,vmss-caribeshop00000C,antes de ejecutar run-command
+2026-11-24T04:01:39.525994525Z,FALLA_LOGICA_ACTIVA,12,vmss-caribeshop00000C,bandera creada: /health responde 503
+2026-11-24T04:24:42.794Z,FALLA_ABRUPTA_INICIO,14,vmss-caribeshop00000E,delete-instances
