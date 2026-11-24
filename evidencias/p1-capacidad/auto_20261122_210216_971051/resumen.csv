@@ -1,0 +1,9 @@
+﻿Usuarios,RPS_medio_estable,p95_max_ms,Errores,Cumple,Motivo,Fase,Segundos_estables,Prefijo
+25,20.494,320.0,0,Si,OK,busqueda,235.0,C:\Users\mjuli\OneDrive\Documentos\GitHub\Parcial-Final-Rafa\evidencias\p1-capacidad\auto_20261122_210216_971051\01_busqueda_u25
+50,40.476,390.0,0,Si,OK,busqueda,229.0,C:\Users\mjuli\OneDrive\Documentos\GitHub\Parcial-Final-Rafa\evidencias\p1-capacidad\auto_20261122_210216_971051\02_busqueda_u50
+100,79.477,410.0,0,Si,OK,busqueda,220.0,C:\Users\mjuli\OneDrive\Documentos\GitHub\Parcial-Final-Rafa\evidencias\p1-capacidad\auto_20261122_210216_971051\03_busqueda_u100
+200,128.829,5000.0,568,No,Errores; p95 > 1000 ms,busqueda,210.0,C:\Users\mjuli\OneDrive\Documentos\GitHub\Parcial-Final-Rafa\evidencias\p1-capacidad\auto_20261122_210216_971051\04_busqueda_u200
+150,108.714,1500.0,112,No,Errores; p95 > 1000 ms,refinamiento,210.0,C:\Users\mjuli\OneDrive\Documentos\GitHub\Parcial-Final-Rafa\evidencias\p1-capacidad\auto_20261122_210216_971051\05_refinamiento_u150
+125,96.349,550.0,32,No,Errores,refinamiento,215.0,C:\Users\mjuli\OneDrive\Documentos\GitHub\Parcial-Final-Rafa\evidencias\p1-capacidad\auto_20261122_210216_971051\06_refinamiento_u125
+110,85.459,460.0,0,Si,OK,refinamiento,218.0,C:\Users\mjuli\OneDrive\Documentos\GitHub\Parcial-Final-Rafa\evidencias\p1-capacidad\auto_20261122_210216_971051\07_refinamiento_u110
+115,89.134,490.0,21,No,Errores,refinamiento,216.0,C:\Users\mjuli\OneDrive\Documentos\GitHub\Parcial-Final-Rafa\evidencias\p1-capacidad\auto_20261122_210216_971051\08_refinamiento_u115

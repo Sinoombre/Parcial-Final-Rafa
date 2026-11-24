@@ -1,0 +1,58 @@
+[2026-11-22 21:32:26,855] Laptop-Mario/INFO/locust.main: Starting Locust 2.47.0
+[2026-11-22 21:32:26,863] Laptop-Mario/INFO/locust.main: Run time limit set to 300 seconds
+[2026-11-22 21:32:26,865] Laptop-Mario/INFO/locust.runners: Ramping to 125 users at a rate of 5.00 per second
+[2026-11-22 21:32:50,955] Laptop-Mario/INFO/locust.runners: All users spawned: {"Visitante": 125} (125 total users)
+[2026-11-22 21:37:25,908] Laptop-Mario/INFO/locust.main: --run-time limit reached, shutting down
+[2026-11-22 21:37:26,489] Laptop-Mario/INFO/locust.main: Shutting down (exit code 42)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      /                                                                              25169    30(0.12%) |    296     193    5013    260 |   84.04        0.10
+GET      /health                                                                         2546     2(0.08%) |    291     197    5005    260 |    8.50        0.01
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                     27715    32(0.12%) |    296     193    5013    260 |   92.55        0.11
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+GET      /                                                                                     260    290    310    320    370    410    480    770   5000   5000   5000  25169
+GET      /health                                                                               260    290    310    320    370    410    460    520   3700   5000   5000   2546
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                            260    290    310    320    370    410    480    730   5000   5000   5000  27715
+
+Error report
+# occurrences      Error                                                                                               
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d4b90>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a3439490>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a2eab890>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d7650>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a343ae70>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a2ea8a70>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a34383b0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a3439910>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a2e856e0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a34395b0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a2e6b890>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a2eabbf0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a343b530>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d7e30>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d6b10>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a2e6bd10>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d5490>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a2ea97f0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d6e70>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a3801fd0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d6c30>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a343be30>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /health: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a2e6a9f0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /health: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d6570>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d45f0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a3800290>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a3803e30>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d5fd0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a3800950>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a343b890>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a33d6d50>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x145a3439250>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+

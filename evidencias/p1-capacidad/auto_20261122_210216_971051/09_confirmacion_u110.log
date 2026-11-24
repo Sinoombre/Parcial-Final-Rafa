@@ -1,0 +1,47 @@
+[2026-11-22 21:50:32,198] Laptop-Mario/INFO/locust.main: Starting Locust 2.47.0
+[2026-11-22 21:50:32,208] Laptop-Mario/INFO/locust.main: Run time limit set to 600 seconds
+[2026-11-22 21:50:32,214] Laptop-Mario/INFO/locust.runners: Ramping to 110 users at a rate of 5.00 per second
+[2026-11-22 21:50:53,361] Laptop-Mario/INFO/locust.runners: All users spawned: {"Visitante": 110} (110 total users)
+Traceback (most recent call last):
+  File "C:\Users\mjuli\AppData\Roaming\Python\Python315\site-packages\gevent\_ffi\loop.py", line 279, in python_check_callback
+    def python_check_callback(self, watcher_ptr): # pylint:disable=unused-argument
+    
+KeyboardInterrupt
+2026-11-23T02:54:48Z
+[2026-11-22 21:54:48,977] Laptop-Mario/INFO/locust.main: Shutting down (exit code 42)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      /                                                                              19193    15(0.08%) |    284     191    5104    250 |   74.80        0.06
+GET      /health                                                                         1865     1(0.05%) |    285     193    5008    250 |    7.27        0.00
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                     21058    16(0.08%) |    284     191    5104    250 |   82.07        0.06
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+GET      /                                                                                     250    270    290    300    350    390    450    640   4100   5100   5100  19193
+GET      /health                                                                               250    270    290    300    350    390    450    630   4700   5000   5000   1865
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                            250    270    290    300    350    390    450    630   4100   5100   5100  21058
+
+Error report
+# occurrences      Error                                                                                               
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f2e19d90>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f2e5c950>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f2e18cb0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f2e5ccb0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f2e5c3b0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f3334cb0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f3337890>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f3337530>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f2e5d370>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f373a570>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f33345f0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f33a3d10>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f3335010>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /health: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f33a2450>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f2e5c830>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x192f2e5f770>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+

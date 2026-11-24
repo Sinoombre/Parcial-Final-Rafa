@@ -5,6 +5,7 @@
 *.tfvars
 *.tfvars.json
 *.tfplan
+*tfplan
 crash.log
 
 # Backend local
@@ -14,3 +15,8 @@ backend-config.hcl
 .env
 .env.*
 !.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
