@@ -1,0 +1,62 @@
+[2026-11-22 21:44:30,315] Laptop-Mario/INFO/locust.main: Starting Locust 2.47.0
+[2026-11-22 21:44:30,318] Laptop-Mario/INFO/locust.main: Run time limit set to 300 seconds
+[2026-11-22 21:44:30,321] Laptop-Mario/INFO/locust.runners: Ramping to 115 users at a rate of 5.00 per second
+[2026-11-22 21:44:52,418] Laptop-Mario/INFO/locust.runners: All users spawned: {"Visitante": 115} (115 total users)
+[2026-11-22 21:49:29,163] Laptop-Mario/INFO/locust.main: --run-time limit reached, shutting down
+[2026-11-22 21:49:29,687] Laptop-Mario/INFO/locust.main: Shutting down (exit code 42)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      /                                                                              23420    17(0.07%) |    282     193    5030    260 |   78.27        0.06
+GET      /health                                                                         2310     4(0.17%) |    283     194    5117    250 |    7.72        0.01
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                     25730    21(0.08%) |    283     193    5117    260 |   85.99        0.07
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+GET      /                                                                                     260    270    290    310    350    390    440    590   3900   5000   5000  23420
+GET      /health                                                                               250    270    290    300    340    380    430    480   5000   5100   5100   2310
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                            260    270    290    310    350    390    440    580   4100   5000   5100  25730
+
+Error report
+# occurrences      Error                                                                                               
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcbf95010>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcbf96e70>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcbf97530>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcba2b2f0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcba6a570>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dc8b8b9b0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcbf97770>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcba2b770>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /health: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcbfeb0b0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcba684d0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcba6a450>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcba2bad0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcba6b9b0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcc06ca70>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcba6b650>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /health: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcbfe9490>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcbf95fd0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /health: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcc06f2f0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcbfe9c70>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcbfea9f0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+1                  GET /health: ConnectTimeoutError(<HTTPConnection(host='74.159.194.232', port=80) at 0x29dcbfe83b0>, 'Connection to 74.159.194.232 timed out. (connect timeout=5)')
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "src/gevent/greenlet.py", line 912, in gevent._gevent_cgreenlet.Greenlet.run
+  File "C:\Users\mjuli\AppData\Roaming\Python\Python315\site-packages\locust\stats.py", line 1170, in stats_writer
+    self.requests_csv_filehandle.seek(requests_csv_data_start)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: I/O operation on closed file.
+2026-11-23T02:49:29Z <Greenlet at 0x29dcb7d58a0: <bound method StatsCSVFileWriter.stats_writer of <locust.stats.StatsCSVFileWriter object at 0x0000029DCBA15010>>> failed with ValueError
+
+[2026-11-22 21:49:29,696] Laptop-Mario/CRITICAL/locust.main: Unhandled exception in greenlet: <Greenlet at 0x29dcb7d58a0: <bound method StatsCSVFileWriter.stats_writer of <locust.stats.StatsCSVFileWriter object at 0x0000029DCBA15010>>>
+Traceback (most recent call last):
+  File "src/gevent/greenlet.py", line 912, in gevent._gevent_cgreenlet.Greenlet.run
+  File "C:\Users\mjuli\AppData\Roaming\Python\Python315\site-packages\locust\stats.py", line 1170, in stats_writer
+    self.requests_csv_filehandle.seek(requests_csv_data_start)
+    ^^^^^^^
+ValueError: I/O operation on closed file.

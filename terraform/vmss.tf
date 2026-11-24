@@ -23,6 +23,8 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
     key_vault_secret_name = azurerm_key_vault_secret.demo.name
   }))
 
+  extension_operations_enabled = true
+
   identity {
     type = "SystemAssigned" # Para que se pueda realizar S3 y S4
   }

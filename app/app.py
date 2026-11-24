@@ -96,6 +96,10 @@ class Handler(BaseHTTPRequestHandler):
             super().log_message(format, *args)
 
 
+class CaribeShopServer(ThreadingHTTPServer):
+    request_queue_size = 128
+
+
 if __name__ == "__main__":
     ZONE = get_zone()
-    ThreadingHTTPServer(("0.0.0.0", 80), Handler).serve_forever()
+    CaribeShopServer(("0.0.0.0", 80), Handler).serve_forever()

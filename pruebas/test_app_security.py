@@ -19,7 +19,7 @@ class RemoteClientHandler(app.Handler):
 
 
 def get(path, handler=app.Handler):
-    with app.ThreadingHTTPServer(("127.0.0.1", 0), handler) as server:
+    with app.CaribeShopServer(("127.0.0.1", 0), handler) as server:
         thread = threading.Thread(target=server.serve_forever, kwargs={"poll_interval": 0.01})
         thread.start()
         client = HTTPConnection("127.0.0.1", server.server_port, timeout=2)
@@ -34,6 +34,9 @@ def get(path, handler=app.Handler):
 
 
 class AppSecurityTests(unittest.TestCase):
+    def test_server_preserves_load_test_backlog(self):
+        self.assertEqual(app.CaribeShopServer.request_queue_size, 128)
+
     def test_local_read_uses_vm_identity_and_never_returns_the_value(self):
         settings = {
             "KEY_VAULT_URI": "https://caribeshop-test.vault.azure.net/",
