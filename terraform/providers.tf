@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.6.0"
+  required_version = ">= 1.11.0"
 
   required_providers {
     azurerm = {
@@ -10,7 +10,13 @@ terraform {
 }
 
 provider "azurerm" {
-  features {}
+  features {
+    key_vault {
+      # Azure debe respetar la retención del almacén protegido al destruirlo.
+      purge_soft_delete_on_destroy          = false
+      purge_soft_deleted_secrets_on_destroy = false
+    }
+  }
 
   resource_provider_registrations = "none"
 }
