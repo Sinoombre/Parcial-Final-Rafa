@@ -1,7 +1,7 @@
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "app" {
-  #checkov:skip=CKV2_AZURE_32: S3 usa service endpoint y la IPv4 del operador en vez de Private Link. Se acepta la exposición del endpoint público; el firewall deniega por defecto, sin excepciones para servicios de Azure, y RBAC controla las lecturas.
+  #checkov:skip=CKV2_AZURE_32: S3 usa service endpoint y la IPv4 del operador en vez de Private Link. Se acepta la exposición del endpoint público porque el firewall deniega por defecto, sin excepciones para servicios de Azure, y RBAC controla las lecturas.
   name                       = var.key_vault_name
   location                   = azurerm_resource_group.main.location
   resource_group_name        = azurerm_resource_group.main.name
