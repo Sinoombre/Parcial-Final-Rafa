@@ -85,3 +85,8 @@ variable "key_vault_demo_secret_expiration" {
     error_message = "Indica una fecha UTC válida con formato YYYY-MM-DDTHH:MM:SSZ."
   }
 }
+
+variable "alert_email" {
+  description = "Correo que recibe las alertas de Azure Monitor (no se guarda en Git)"
+  type        = string
+}

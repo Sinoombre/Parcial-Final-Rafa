@@ -32,3 +32,18 @@ output "log_analytics_workspace_name" {
   description = "Nombre del workspace donde se consulta la auditoría de Key Vault"
   value       = azurerm_log_analytics_workspace.main.name
 }
+
+output "log_analytics_workspace_guid" {
+  description = "Workspace ID (GUID) para consultas KQL desde la CLI"
+  value       = azurerm_log_analytics_workspace.main.workspace_id
+}
+
+output "autoscale_name" {
+  description = "Nombre del autoscale setting"
+  value       = azurerm_monitor_autoscale_setting.app.name
+}
+
+output "lb_name" {
+  description = "Nombre del Load Balancer"
+  value       = azurerm_lb.main.name
+}
